@@ -75,9 +75,9 @@ Or programmatically:
 
 ```sh
 $ python simple_request.py 
-1. beagle: 0.9462
-2. bluetick: 0.0320
-3. redbone: 0.0066
-4. Walker_hound: 0.0034
-5. Greater_Swiss_Mountain_dog: 0.0026
+1. beagle: 0.9901
+2. Walker_hound: 0.0024
+3. pot: 0.0014
+4. Brittany_spaniel: 0.0013
+5. bluetick: 0.0011
 ```
