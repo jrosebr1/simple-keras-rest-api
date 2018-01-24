@@ -2,7 +2,7 @@
 # Start the server:
 # 	python run_keras_server.py
 # Submit a request via cURL:
-# 	curl -X POST -F image=@jemma.png 'http://localhost:5000/predict'
+# 	curl -X POST -F image=@dog.jpg 'http://localhost:5000/predict'
 # Submita a request via Python:
 #	python simple_request.py
 
@@ -10,15 +10,13 @@
 from keras.applications import ResNet50
 from keras.preprocessing.image import img_to_array
 from keras.applications import imagenet_utils
-from flask import Flask
-from flask import jsonify
-from flask import request
 from PIL import Image
 import numpy as np
+import flask
 import io
 
 # initialize our Flask application and the Keras model
-app = Flask(__name__)
+app = flask.Flask(__name__)
 model = None
 
 def load_model():
@@ -49,10 +47,10 @@ def predict():
 	data = {"success": False}
 
 	# ensure an image was properly uploaded to our endpoint
-	if request.method == "POST":
-		if request.files.get("image"):
+	if flask.request.method == "POST":
+		if flask.request.files.get("image"):
 			# read the image in PIL format
-			image = request.files["image"].read()
+			image = flask.request.files["image"].read()
 			image = Image.open(io.BytesIO(image))
 
 			# preprocess the image and prepare it for classification
@@ -74,7 +72,7 @@ def predict():
 			data["success"] = True
 
 	# return the data dictionary as a JSON response
-	return jsonify(data)
+	return flask.jsonify(data)
 
 # if this is the main thread of execution first load the model and
 # then start the server
