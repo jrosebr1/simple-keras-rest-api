@@ -1,10 +1,10 @@
 # A Simple Keras + deep learning REST API
 
-**Note:** Links will be added after the blog posts are published.
-
-This repository contains the code for [*Building a simple Keras + deep learning REST API*](#), published on the Keras.io blog.
+This repository contains the code for [*Building a simple Keras + deep learning REST API*](https://blog.keras.io/building-a-simple-keras-deep-learning-rest-api.html), published on the Keras.io blog.
 
 The method covered here is intended to be instructional. It is _not_ meant to be production-level and capable of scaling under heavy load. If you're interested in a more advanced Keras REST API that leverages message queues and batching, [please refer to this tutorial](https://www.pyimagesearch.com/2018/01/29/scalable-keras-deep-learning-rest-api/).
+
+For an _even more advanced version_ that includes deploying a model to production, [refer to this blog post](https://www.pyimagesearch.com/2018/02/05/deep-learning-production-keras-redis-flask-apache/).
 
 ## Getting started
 
